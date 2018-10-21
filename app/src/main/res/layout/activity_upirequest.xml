@@ -29,9 +29,9 @@
         android:layout_marginStart="8dp"
         android:text="Phone No"
         app:layout_constraintEnd_toStartOf="@+id/editText"
-        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="85dp" />
+        tools:layout_editor_absoluteY="98dp" />
 
     <Button
         android:id="@+id/button"
