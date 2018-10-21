@@ -35,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         android:onClick="add"
-        />
+        tools:ignore="OnClick" />
 
     <Button
         android:id="@+id/pay"
@@ -50,5 +50,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:onClick="pay"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        tools:ignore="OnClick" />
 </android.support.constraint.ConstraintLayout>
