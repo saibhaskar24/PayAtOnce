@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "664857325743",
+    "firebase_url": "https://payatonce-fa8e4.firebaseio.com",
+    "project_id": "payatonce-fa8e4",
+    "storage_bucket": "payatonce-fa8e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664857325743:android:011ada4149cceda9",
+        "android_client_info": {
+          "package_name": "com.example.bhaskar.payatonce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664857325743-v98ki8p6v6o5gshnl40qsnp9flaarqmq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bhaskar.payatonce",
+            "certificate_hash": "159c533aab3e8a574bce4f6a43c643f881844a6a"
+          }
+        },
+        {
+          "client_id": "664857325743-25rau5ibv4tg2fd84ddep00e8frjqt3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZRjuDDE4hXMZNtx2wTNX4uUcVZlJWlTI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664857325743-25rau5ibv4tg2fd84ddep00e8frjqt3q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
