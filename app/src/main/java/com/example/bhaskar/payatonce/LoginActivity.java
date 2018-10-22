@@ -30,14 +30,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
+
+
 public class LoginActivity extends AppCompatActivity  {
+    String url = "http://cefec761.ngrok.io/WebApplication1/api/Products/";
     EditText pass;
-    Boolean find;
     AutoCompleteTextView ph;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +53,18 @@ public class LoginActivity extends AppCompatActivity  {
         }
 
     public void signin(View view ) {
-        find = search()
-        if(find)
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
+        String phonno = ph.getText().toString();
+        url = url + phonno;
+        JSONObject jo ;
+        String passwd = (String) jo.get("passwd");
+        if(pass.getText().toString() == passwd) {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("JSNOData", jo);
+            startActivity(intent);
+        }
+        else {
+            //Show wrong passwd
+        }
     }
 }
 
