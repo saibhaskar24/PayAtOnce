@@ -36,14 +36,21 @@ import java.util.List;
 import static android.Manifest.permission.READ_CONTACTS;
 
 public class LoginActivity extends AppCompatActivity  {
-
+    EditText pass;
+    Boolean find;
+    AutoCompleteTextView ph;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        pass = (EditText)findViewById(R.id.password);
+        ph = (AutoCompleteTextView)findViewById(R.id.phno);
         }
 
     public void signin(View view ) {
+        find = search()
+        if(find)
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
