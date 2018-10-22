@@ -5,6 +5,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 
@@ -22,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     public void pay(View view) {
         Intent intent = new Intent(this,FinalResult.class);
         startActivity(intent);
+  }
+  public void billPayment(String s){
+      //CheckBox c = new CheckBox(s);
   }
 
 }
