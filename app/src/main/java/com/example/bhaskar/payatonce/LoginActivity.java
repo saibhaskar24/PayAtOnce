@@ -47,7 +47,18 @@ import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
-
+class Data {
+    public String p,b,e,w,m,t,g;
+    Data(String p1,String b1,String e1,String w1,String m1,String t1,String g1) {
+        p = p1;
+        b = b1;
+        e = e1;
+        w = w1;
+        m= m1;
+        t=t1;
+        g=g1;
+    }
+}
 public class LoginActivity extends AppCompatActivity  {
     String url = "http://200899a0.ngrok.io/WebApplication1/api/Products/";
     EditText pass;
@@ -55,18 +66,7 @@ public class LoginActivity extends AppCompatActivity  {
     String passwd,bal,el,w,m,tv,ga;
     JSONObject root;
 
-    public  class data {
-        public String p,b,e,w,m,t,g;
-        data(String p1,String b1,String e1,String w1,String m1,String t1,String g1) {
-            p = p1;
-            b = b1;
-            e = e1;
-            w = w1;
-            m= m1;
-            t=t1;
-            g=g1;
-        }
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity  {
         fetchData();
         if(pass.getText().toString() == passwd) {
             Intent intent = new Intent(this, MainActivity.class);
-            data d =new data(passwd,bal,el,w,m,tv,ga);
+            Data d =new Data(passwd,bal,el,w,m,tv,ga);
             intent.putExtra("dataa",d);
             startActivity(intent);
         }
