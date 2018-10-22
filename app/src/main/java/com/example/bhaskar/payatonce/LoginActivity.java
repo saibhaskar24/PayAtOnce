@@ -48,12 +48,25 @@ import java.util.List;
 import static android.Manifest.permission.READ_CONTACTS;
 
 
-
 public class LoginActivity extends AppCompatActivity  {
-    String url = "http://cefec761.ngrok.io/WebApplication1/api/Products/";
+    String url = "http://200899a0.ngrok.io/WebApplication1/api/Products/";
     EditText pass;
     AutoCompleteTextView ph;
-    JSONObject jo ;
+    String passwd,bal,el,w,m,tv,ga;
+    JSONObject root;
+
+    public  class data {
+        public String p,b,e,w,m,t,g;
+        data(String p1,String b1,String e1,String w1,String m1,String t1,String g1) {
+            p = p1;
+            b = b1;
+            e = e1;
+            w = w1;
+            m= m1;
+            t=t1;
+            g=g1;
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,14 +76,14 @@ public class LoginActivity extends AppCompatActivity  {
         ph = (AutoCompleteTextView)findViewById(R.id.phno);
         }
 
-    public void signin(View view ) throws IOException, JSONException {
+    public void signin(View view ) throws IOException {
         String phonno = ph.getText().toString();
         url = url + phonno;
         fetchData();
-        String passwd = (String) jo.get("password");
         if(pass.getText().toString() == passwd) {
             Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("JSNOData",jo);
+            data d =new data(passwd,bal,el,w,m,tv,ga);
+            intent.putExtra("dataa",d);
             startActivity(intent);
         }
         else {
@@ -86,8 +99,18 @@ public class LoginActivity extends AppCompatActivity  {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.e("Rest Response", response.toString());
-                        jo = response;
+                        root= new JSONObject(response);
+                        try {
+                            passwd = root.getString("password");
+                            bal =root.getString("BankBal");
+                            el=root.getString("Electricity");
+                            w=root.getString("Water");
+                            m=root.getString("Mobile");
+                            tv=root.getString("Tv");
+                            ga=root.getString("Gas");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 },
                 new Response.ErrorListener() {

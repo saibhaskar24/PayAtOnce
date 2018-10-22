@@ -15,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
     double total =0;
     TextView tot ;
     int bal;
+    public  class data {
+        public String p,b,e,w,m,t,g;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +25,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tot = (TextView)findViewById(R.id.tot);
         Intent i = getIntent();
-        JSONObject jo = i.getStringExtra("JSNOData");
-        bal =  jo.getInt("BankBal");
-        total += jo.getInt("Electricity");
-        total += jo.getInt("Water");
-        total += jo.getInt("Mobile");
-        total += jo.getInt("Tv");
-        total += jo.getInt("Gas");
+        data d = new data();
+        d = i.getStringExtra("dataa");
+        bal =  Integer.parseInt(d.b);
+        total += Integer.parseInt(d.e);
+        total += Integer.parseInt(d.w);
+        total += Integer.parseInt(d.m);
+        total += Integer.parseInt(d.t);
+        total += Integer.parseInt(d.g);
     }
 
     public void pay(View view) {
