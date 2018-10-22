@@ -24,14 +24,16 @@ public class MainActivity extends AppCompatActivity {
         Intent i = getIntent();
         JSONObject jo = i.getStringExtra("JSNOData");
         bal =  jo.getInt("BankBal");
-        total += jo.getInt("");
-        total += jo.getInt("");
-        total += jo.getInt("");
-        total += jo.getInt("");
+        total += jo.getInt("Electricity");
+        total += jo.getInt("Water");
+        total += jo.getInt("Mobile");
+        total += jo.getInt("Tv");
+        total += jo.getInt("Gas");
     }
 
     public void pay(View view) {
-        if(total > tot) {
+        tot.setText(total+"");
+        if(total > bal) {
             Intent intent = new Intent(this, FinalResult.class);
             startActivity(intent);
         }
