@@ -14,10 +14,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
     double total =0;
     TextView tot ;
-    int bal;
-    public  class data {
-        public String p,b,e,w,m,t,g;
-    }
+    int bal,el,w,m,tv,ga;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +22,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tot = (TextView)findViewById(R.id.tot);
         Intent i = getIntent();
-        data d = new data();
-        d = i.getStringExtra("dataa");
-        bal =  Integer.parseInt(d.b);
-        total += Integer.parseInt(d.e);
-        total += Integer.parseInt(d.w);
-        total += Integer.parseInt(d.m);
-        total += Integer.parseInt(d.t);
-        total += Integer.parseInt(d.g);
+        bal = Integer.parseInt(i.getStringExtra("bal"));
+        el = Integer.parseInt(i.getStringExtra("el"));
+        w = Integer.parseInt(i.getStringExtra("w"));
+        m = Integer.parseInt(i.getStringExtra("m"));
+        tv = Integer.parseInt(i.getStringExtra("tv"));
+        ga = Integer.parseInt(i.getStringExtra("ga"));
+        total = bal+el+m+tv+ga;
     }
 
     public void pay(View view) {

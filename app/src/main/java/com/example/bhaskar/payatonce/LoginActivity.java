@@ -47,26 +47,13 @@ import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
-class Data {
-    public String p,b,e,w,m,t,g;
-    Data(String p1,String b1,String e1,String w1,String m1,String t1,String g1) {
-        p = p1;
-        b = b1;
-        e = e1;
-        w = w1;
-        m= m1;
-        t=t1;
-        g=g1;
-    }
-}
+
 public class LoginActivity extends AppCompatActivity  {
     String url = "http://200899a0.ngrok.io/WebApplication1/api/Products/";
     EditText pass;
     AutoCompleteTextView ph;
     String passwd,bal,el,w,m,tv,ga;
     JSONObject root;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,8 +69,12 @@ public class LoginActivity extends AppCompatActivity  {
         fetchData();
         if(pass.getText().toString() == passwd) {
             Intent intent = new Intent(this, MainActivity.class);
-            Data d =new Data(passwd,bal,el,w,m,tv,ga);
-            intent.putExtra("dataa",d);
+            intent.putExtra("bal",bal);
+            intent.putExtra("el",el);
+            intent.putExtra("w",w);
+            intent.putExtra("tv",tv);
+            intent.putExtra("ga",ga);
+
             startActivity(intent);
         }
         else {
@@ -99,7 +90,7 @@ public class LoginActivity extends AppCompatActivity  {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        root= new JSONObject(response);
+                       JSONObject root= new JSONObject(response);
                         try {
                             passwd = root.getString("password");
                             bal =root.getString("BankBal");
