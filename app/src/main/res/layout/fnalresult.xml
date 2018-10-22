@@ -23,15 +23,5 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/paid" />
 
-    <EditText
-        android:id="@+id/Continue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Continue Payment................."
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="403dp" />
 
 </android.support.constraint.ConstraintLayout>
